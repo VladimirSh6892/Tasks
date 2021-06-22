@@ -88,9 +88,32 @@ arr1.filter((item)=> !arr2.includes(item))
 // console.log(arrayDiff([1,2,2,2,3],[2]));
 
 //Задача 13
+
+let it = (n) => n.split().map((item)=> item - 1, 5)
+
+// console.log(it(5))
+
 //Задача 14
+const sumMin = (arr) => arr.sort((a, b) => a - b)
+.filter(item => item > 0)
+.slice(0,2)
+.reduce((a, b) => a + b)
+// console.log(sumMin([12,423,54,1235,3,15,2,-1,52]))
+
 //Задача 15
+const filterStr = (str) => str
+.split(' ')
+.sort((a,b)=>a.split('').filter(item=>
+  isFinite(item))-b.split('').filter(item=>isFinite(item)))
+.join(' ');
+
+// console.log(filterStr('is2 Thi1s T4est 3a'));
+
 //Задача 16
+const reverse = (str) => str.split(' ')
+.map((item)=> item.split('').reverse().join('')).join(' ')
+
+// console.log(reverse('This is an example!'))
 //Задача 17
 //Задача 18
 //Задача 19
