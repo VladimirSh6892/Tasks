@@ -154,7 +154,12 @@ const replaceAll = (find, replace, str) => str.split(' ')
 .map(item => item.replace(find, replace)).join(' ')
 
 // console.log(replaceAll('abc', 'x', 'abc def def lom abc abc def'));
+
 //Задача 27
+const removeDuplicate = (str) => str.split(', ')
+.filter((item, index) => index === str.split(', ').indexOf(item))
+
+// console.log(removeDuplicate("вишня, груша, слива, груша, слива"))
 //Задача 28
 //Задача 29
 //Задача 30
