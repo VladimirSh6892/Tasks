@@ -137,8 +137,59 @@ const factorial = (num) => (num != 1) ?
 // console.log(factorial(5));
 //Задача 21
 //Задача 22
-//Задача 23
+const transform = (arr) => {
+  if(arr.includes('--discard-prev')){
+      arr.splice(arr.indexOf('--discard-prev')-1,2)
+  }
+  if (arr.includes('--discard-next')){
+      arr.splice(arr.indexOf('--discard-next'),2)
+  }
+  if (arr.includes('--double-next')){
+      arr.splice(arr.indexOf('--double-next'),1,arr[arr.indexOf('--double-next')+1])
+  }
+  if (arr.includes('--double-prev')){
+      arr.splice(arr.indexOf('--double-prev'),1,arr[arr.indexOf('--double-prev')-1])
+  }
+  return arr
+}
 
+// console.log(transform ([1, 3, '--double-next', 4]))
+// console.log(transform ([1, 3, '--double-prev', 4]))
+// console.log(transform ([1, 3, '--discard-prev', 4]))
+// console.log(transform ([1, 3, '--discard-next', 4]))
+
+//Задача 23
+const chainMaker = {
+  chain: [],
+  getLength() {
+    return this.chain.length;
+  },
+  addLink(value = '()') {
+    this.chain.push(`(${value})`);
+    return this;
+  },
+  reverseChain() {
+    this.chain.reverse();
+    return this
+  },
+  removeLink(position){
+      if(Number.isInteger(position) && position < this.chain.length && position > 0){
+        this.chain.splice(position - 1, 1)
+        return this
+      } else {
+          console.log('error');
+      }
+  },
+  finishChain(){
+      const finish = this.chain.slice();
+      this.chain.length = 0
+    return finish.join('~~');
+  }
+};
+
+// console.log(chainMaker.addLink(1).addLink(2).reverseChain().addLink(3).finishChain());
+// console.log(chainMaker.addLink(1).addLink(2).removeLink(1).addLink(3).finishChain());
+// console.log(chainMaker.addLink(1).addLink(2).addLink(3).finishChain());
 
 //Задача 24
 const isUpperCase = (str, character) => str.charAt(character) === str.charAt(character).toUpperCase();
@@ -164,7 +215,7 @@ const replaceAll = (find, replace, str) => str.split(' ')
 const removeDuplicate = (str) => str.split(', ')
 .filter((item, index) => index === str.split(', ').indexOf(item))
 
-console.log(removeDuplicate("вишня, груша, слива, груша, слива"))
+// console.log(removeDuplicate("вишня, груша, слива, груша, слива"))
 
 //Задача 29
 const unique_letters = (str) => str.split('')
@@ -173,7 +224,7 @@ const unique_letters = (str) => str.split('')
 
 const unique_letters1 = (str) => Array.from(new Set(str.split(''))).join('')
 
-console.log(unique_letters1('anaconda'));
+// console.log(unique_letters1('anaconda'));
 
 //Задача 30
 //Задача 31
@@ -191,8 +242,8 @@ const removeDuplicateAnother = (arr) => arr.filter((item, index) => index === ar
 const removeDuplicates = (arr)=> arr.filter((item, index, array) => array.indexOf(item) === array.lastIndexOf(item))
 // оставляет только строки которые не имеют дубликатов
 
-console.log(removeDuplicateAnother(arr));
-console.log(removeDuplicates(arr));
+// console.log(removeDuplicateAnother(arr));
+// console.log(removeDuplicates(arr));
 //Задача 38
 //Задача 39
 //Задача 40
