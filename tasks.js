@@ -138,6 +138,8 @@ const factorial = (num) => (num != 1) ?
 //Задача 21
 //Задача 22
 //Задача 23
+
+
 //Задача 24
 const isUpperCase = (str, character) => str.charAt(character) === str.charAt(character).toUpperCase();
 // console.log(isUpperCase('tasks JavaScript', 6));
@@ -150,18 +152,29 @@ const capitalizeFirstLetter = (str) => str.split()
 // console.log(capitalizeFirstLetter("пример строки"))
 
 //Задача 26
+
+
+//Задача 27
 const replaceAll = (find, replace, str) => str.split(' ')
 .map(item => item.replace(find, replace)).join(' ')
 
 // console.log(replaceAll('abc', 'x', 'abc def def lom abc abc def'));
 
-//Задача 27
+//Задача 28
 const removeDuplicate = (str) => str.split(', ')
 .filter((item, index) => index === str.split(', ').indexOf(item))
 
-// console.log(removeDuplicate("вишня, груша, слива, груша, слива"))
-//Задача 28
+console.log(removeDuplicate("вишня, груша, слива, груша, слива"))
+
 //Задача 29
+const unique_letters = (str) => str.split('')
+.filter((item, index, arr) => index === arr.indexOf(item))
+.join('');
+
+const unique_letters1 = (str) => Array.from(new Set(str.split(''))).join('')
+
+console.log(unique_letters1('anaconda'));
+
 //Задача 30
 //Задача 31
 //Задача 32
@@ -170,6 +183,16 @@ const removeDuplicate = (str) => str.split(', ')
 //Задача 35
 //Задача 36
 //Задача 37
+let arr = ["php", "php", "css", "css", "script", "script", "html", "html", "java"];
+
+const removeDuplicateAnother = (arr) => arr.filter((item, index) => index === arr.indexOf(item))
+// удаляет дубликаты
+
+const removeDuplicates = (arr)=> arr.filter((item, index, array) => array.indexOf(item) === array.lastIndexOf(item))
+// оставляет только строки которые не имеют дубликатов
+
+console.log(removeDuplicateAnother(arr));
+console.log(removeDuplicates(arr));
 //Задача 38
 //Задача 39
 //Задача 40
