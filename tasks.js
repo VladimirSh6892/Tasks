@@ -43,8 +43,12 @@ const correctPin = (str) =>
 // console.log(correctPin("5454666"));
 
 //Задача 6
-
-
+function counter(n) {
+  let newArr = Array();
+  for (n; n>=1; n--) newArr.push(n)
+  return newArr
+}
+console.log(counter(5));
 //Задача 7
 const toJadenCase = (str) =>
   str
@@ -280,7 +284,7 @@ const colonOdd1 = (num) => num.toString().split('')
 item + ':' : item)
 .join('');
 
-console.log(colonOdd1(55639217));
+// console.log(colonOdd1(55639217));
 
 //Задача 37
 let arr = ["php", "php", "css", "css", "script", "script", "html", "html", "java"];
