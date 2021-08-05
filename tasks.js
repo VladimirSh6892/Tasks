@@ -227,12 +227,61 @@ const unique_letters1 = (str) => Array.from(new Set(str.split(''))).join('')
 // console.log(unique_letters1('anaconda'));
 
 //Задача 30
+const alphabetize = (str) => str.split('').sort().join('');
+
+// console.log(alphabetize("Europe"));
+
 //Задача 31
+const cutString = (str, n) => str.split(' ', n).join(' ');
+
+// console.log(cutString("Сила тяжести приложена к центру масс тела", 5));
+
 //Задача 32
+const strip = (str) => str.split(' ')
+.filter((item) => item.length > 0)
+.join(' ');
+
+// console.log(strip(" Pasha is a good boy "));
+
 //Задача 33
+const comparison = (str1, str2) => (str1.toLowerCase()) == (str2.toLowerCase());
+
+// console.log(comparison('strinn', 'StRiNg'));
+
 //Задача 34
+let str = "Каждый охотник желает знать";
+let str1 = "скрипт";
+let str2 = "знать";
+
+const subStr = {
+  endsWith(str){
+    this.split(' ').slice(-1).join('') === str
+    return this
+  }
+}
+
+// console.log(str.endsWith(str1)); 
+// console.log(str.endsWith(str2));
+
 //Задача 35
+let vegetables = ['Капуста', 'Репа', 'Редиска'];
+
+const cl = (arr) => arr.slice();
+
+let copyArr = cl(vegetables)
+
+// console.log(copyArr, vegetables);
+
 //Задача 36
+const colonOdd = (num) => num.toString().replace(/([13579](?=[13579]))/gim, '$1:');
+
+const colonOdd1 = (num) => num.toString().split('')
+.map((item, index, arr) => (item % 2 && arr[index + 1] % 2) ?
+item + ':' : item)
+.join('');
+
+console.log(colonOdd1(55639217));
+
 //Задача 37
 let arr = ["php", "php", "css", "css", "script", "script", "html", "html", "java"];
 
