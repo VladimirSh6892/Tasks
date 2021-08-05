@@ -43,12 +43,7 @@ const correctPin = (str) =>
 // console.log(correctPin("5454666"));
 
 //Задача 6
-function counter(n) {
-  let newArr = Array();
-  for (n; n>=1; n--) newArr.push(n)
-  return newArr
-}
-console.log(counter(5));
+
 //Задача 7
 const toJadenCase = (str) =>
   str
@@ -92,8 +87,14 @@ const arrayDiff = (arr1, arr2) =>
 // console.log(arrayDiff([1,2,2,2,3],[2]));
 
 //Задача 13
+function counter(n) {
+  let newArr = Array();
+  for (n; n>=1; n--) newArr.push(n)
+  return newArr
+}
+// console.log(counter(5));
 
-let it = (n) => n.split().map((item) => item - 1, 5)
+// let it = (n) => n.toString().split('').map((item) => item - 1, 5)
 
 // console.log(it(5))
 
